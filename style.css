@@ -1,0 +1,116 @@
+:root {
+    --base: #5E5690;
+    --base-light: #7873A7;
+    --base-dark: #555184;
+    --shadow: #4F4C6B;
+    --letter: #d8d7e5;
+  }
+
+
+html,
+body {
+    --bg-color: #222;
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    background:
+      radial-gradient(circle at 50% 100%, #222, rgba(0,0,0,.95) 40%),
+      var(--bg-color);
+    margin: 0;
+    image-rendering: pixelated;
+}
+  
+/* body:after {  
+    content: url('https://t4.ftcdn.net/jpg/02/82/85/41/360_F_282854103_37oUj0bXJxBW6MOb5GnxuBmv4Vq83PKw.jpg');
+    mix-blend-mode: multiply;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 38.25%);
+    text-align: center;  
+} */
+
+  
+* {
+    border: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+  
+.container {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.content {
+    position: relative;
+    perspective: 600px;
+}
+  
+.shadow {
+    position: absolute;
+    width: 200px;
+    height: 1px;
+    background: transparent;
+    border-radius: 30%;
+    box-shadow: 50px 100px 10px 5px #eeeef3;
+}
+  
+.letter {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 280px;
+    height: 160px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 15;
+    border-radius: 2px;
+    background: var(--letter);
+    box-shadow: 0px 1px 7px -2px var(--base);
+}
+  .letter .body {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--base);
+    background: #000;
+}
+  
+.envelope {
+    position: relative;
+    width: 300px;
+    height: 180px;
+    background: linear-gradient(#cccbd7 0.5px, var(--base-light) 0.5px);
+    cursor: pointer;
+}
+  
+.envelope::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 300px;
+    border-top: 115px solid #7873A7;
+    border-left: 150px solid transparent;
+    border-right: 150px solid transparent;
+    box-sizing: border-box;
+    z-index: 30;
+    transform-origin: top;
+}
+  
+.envelope::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 180px;
+    z-index: 25;
+    background: linear-gradient(30deg, var(--base-dark) 47%, var(--shadow) 50%, var(--base) 50%) 150px 90px/150px 90px no-repeat, linear-gradient(31deg, var(--base) 49%, var(--shadow) 50%, transparent 50%) 0px 0px/152px 90px no-repeat, linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 90px/151px 90px no-repeat, linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 150px 0px/150px 90px no-repeat;
+}
