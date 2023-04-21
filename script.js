@@ -1,3 +1,5 @@
+const clickMe = document.getElementById('clickMe');
+
 let t1 = gsap.timeline({ paused: true }); 
 let flap = CSSRulePlugin.getRule(".envelope:before"); 
 
@@ -40,6 +42,7 @@ t2.to('.shadow', {
 function openCard(e) {
   t1.play();
   t2.play();
+  clickMe.style.display = "none";
   createFirework()
 }
 
