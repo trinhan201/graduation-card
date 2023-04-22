@@ -27,7 +27,6 @@ body {
 }
   
 .container {
-    position: relative;
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -102,4 +101,35 @@ body {
     height: 180px;
     z-index: 25;
     background: linear-gradient(30deg, var(--base-dark) 47%, var(--shadow) 50%, var(--base) 50%) 150px 90px/150px 90px no-repeat, linear-gradient(31deg, var(--base) 49%, var(--shadow) 50%, transparent 50%) 0px 0px/152px 90px no-repeat, linear-gradient(150deg, var(--base) 50%, var(--shadow) 50%, var(--base-dark) 53%) 0px 90px/151px 90px no-repeat, linear-gradient(148.7deg, transparent 50%, var(--shadow) 50%, var(--base) 51%) 150px 0px/150px 90px no-repeat;
+}
+
+.noResponsive {
+    display: none;
+}
+
+@media (max-width: 63.9375em) {
+    html, body {
+        min-width: 0;
+        min-height: 0;
+        overflow: hidden;
+        background: none;
+        margin: 0;
+        image-rendering: unset;
+        height: 100vh;
+    }
+    .container {
+        display: none;
+    }
+
+    .noResponsive {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100%;
+    }
+
+    .noResponsive h1 {
+        color: red;
+        font-size: 22px;
+    }
 }
